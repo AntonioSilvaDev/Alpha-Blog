@@ -12,10 +12,16 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(article_params)
-    article.save
+    @article = Article.new(article_params)
+    # has to be an instance variable to send the errors back to the
+    # 'new' view to display errors
 
-    redirect_to article_path(article)
+    if @article.save
+      flash[:notice] = 'Article was successfully created!'
+      redirect_to article_path(@article)
+    else
+      render 'new'
+    end
   end
 
   def destroy
