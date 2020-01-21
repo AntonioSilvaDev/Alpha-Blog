@@ -16,3 +16,45 @@ $navbar-default-bg: #3385ff;
 #logo:hover {
   color: lightgreen
 }
+
+.page-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  border-top: 1px solid grey;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.blue {
+  background-color: #3385ff
+}
+
+.page-footer a {
+  color: black
+}
+
+.jumbotron {
+  background-image: url('blog_img_url.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.jumbotron h1 {
+  color: white;
+}
+
+.jumbotron .photo-cred {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  margin-bottom: 0;
+  padding-right: 5px;
+  font-weight: 200;
+}
