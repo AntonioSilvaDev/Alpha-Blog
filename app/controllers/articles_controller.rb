@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.last
     # has to be an instance variable to send the errors back to the
     # 'new' view to display errors
 

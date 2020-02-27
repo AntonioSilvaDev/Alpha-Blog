@@ -17,5 +17,12 @@
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
+    <% if Rails.env.development? %>
+      <div class="row" style="background-color: lightgrey">
+        <div class="col-md-10 offset-md-1">
+          <%= debug(params) %>
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>
