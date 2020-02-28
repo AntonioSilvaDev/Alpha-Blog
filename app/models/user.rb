@@ -9,6 +9,6 @@ class User < ApplicationRecord
              uniqueness: { case_sensitive: false },
              length: { maximum: 105 },
              format: { with: VALID_EMAIL_REGEX, message: "email is not formatted properly" }
-
+  has_secure_password
 
 end
