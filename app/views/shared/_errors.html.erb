@@ -4,7 +4,7 @@
       <div class="card bg-danger">
         <div class="card-header">
           <h4 class="card-title">
-            <%= pluralize(obj.errors.count, "error") %> prohibited this article from being saved:
+            <%= pluralize(obj.errors.count, "error") %> prohibited this <%= obj.class %> from being saved:
           </h4>
           <div class="card-body">
             <ul>
