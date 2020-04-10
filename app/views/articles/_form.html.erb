@@ -4,20 +4,20 @@
   <div class='col-sm-12'>
     <%= form_with(model: @article, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
     <div class="form-group row">
-      <%= f.label :title, class:"col-sm-2 col-form-label text-right" %>
+      <%= f.label :title, class:"col-sm-2 col-form-label text-light" %>
       <div class="col-sm-10">
         <%= f.text_field :title, class: "form-control", placeholder: "Name of Article" %>
       </div>
     </div>
     <div class="form-group row">
-      <%= f.label :description, class:"col-sm-2 col-form-label text-right" %>
+      <%= f.label :description, class:"col-sm-2 col-form-label text-light" %>
       <div class="col-sm-10">
         <%= f.text_area :description, size: '24x6', class: "form-control", placeholder: "Enter Article text here....." %>
       </div>
     </div>
     <div class="form-group row">
       <div class="offset-sm-2 col-sm-8 ">
-        <%= f.submit class: "btn btn-primary btn-sm" %>
+        <%= f.submit class: "btn btn-outline-light" %>
       </div>
     </div>
   <% end %>
