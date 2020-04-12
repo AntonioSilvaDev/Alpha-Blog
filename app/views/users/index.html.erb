@@ -1,0 +1,8 @@
+<h1 align="center">Listing all users</h1>
+<div class="d-flex justify-content-center">
+  <%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm text-center') %>
+</div>
+<%= render 'users', users: @users %>
+<div class="d-flex justify-content-center">
+  <%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm text-center') %>
+</div>
