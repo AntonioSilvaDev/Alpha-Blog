@@ -1,7 +1,7 @@
 <% articles.each do |article| %>
   <div class="row">
     <div class="col-sm-10 offset-sm-1">
-      <div class="card bg-light p-4 mb-3">
+      <div class="card text-center bg-light mb-5 shadow">
         <div class="article-title">
           <%= link_to article.title, article_path(article) %>
         </div>
@@ -12,10 +12,10 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-            <small>Created by: <%= article.user.username if article.user %>,
-                      <%= time_ago_in_words(article.created_at) %> ago,
-                      last updated <%= time_ago_in_words(article.updated_at) %> ago
-          </small>
+              <small>Created by: <%= article.user.username if article.user %>,
+                        <%= time_ago_in_words(article.created_at) %> ago,
+                        last updated <%= time_ago_in_words(article.updated_at) %> ago
+              </small>
             </div>
           </div>
         <div class="article-actions">
