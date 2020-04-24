@@ -1,30 +1,24 @@
-<% users.each do |user| %>
-  <div class="row">
-    <div class="col-sm-10 offset-sm-1">
-      <div class="card bg-light p-4 mb-3">
-        <div class="user-title">
-          <%= link_to user.username, user_path(user) %>
-        </div>
-        <div class="user-body">
-          <%= truncate(user.email, length: 100) %>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <small>Created by: <%= user.username if user %>,
-                      <%= time_ago_in_words(user.created_at) %> ago,
-                      last updated <%= time_ago_in_words(user.updated_at) %> ago
-           </small>
+<div class="container">
+  <% users.each do |user| %>
+    <div class="row">
+      <div class="col-sm-10 offset-sm-1">
+        <div class="card text-center shadow bg-white mb-5">
+          <div class="card-header font-italic">
+            <%= link_to user.username.capitalize, user %>
           </div>
-        </div>
-        <div class="user-actions">
-          <%= link_to "Edit this user", edit_user_path(user), class: "btn btn-sm btn-primary" %>
-          <%= link_to "Delete this user",
-                      user_path(user),
-                      method: :delete,
-                      data: { confirm: "Are you sure you want to delete the user?"},
-                      class: "btn btn-sm btn-danger" %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to gravitar_for(user, size: 150), user %>
+            </h5>
+            <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+            <%= link_to "View profile", user_path(user), class: "btn btn-sm btn-outline-success" %>
+            <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-sm btn-outline-primary" %>
+          </div>
+          <div class="card-footer">
+              <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
