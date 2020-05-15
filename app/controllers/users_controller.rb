@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:success] = "Successfully updated account"
-      redirect_to edit_user_path
+      redirect_to @user
     else
       render "edit"
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Successfully signed Up! Welcome to the blog #{@user.username}"
-      redirect_to articles_path
+      redirect_to users_path
     else
       render 'new'
     end

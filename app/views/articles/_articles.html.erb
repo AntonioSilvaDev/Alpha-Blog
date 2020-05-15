@@ -4,11 +4,10 @@
       <div class="card text-center bg-light mb-5 shadow">
         <div class="article-title">
           <%= link_to article.title, article_path(article) %>
+          <span class="text-secondary font-italic" style="font-size:13px">by <%= link_to article.user.username, user_path(article.user) %></span>
         </div>
         <div class="article-body">
           <%= truncate(article.description, length: 100) %>
-
-
         </div>
         <div class="row">
             <div class="col-sm-12">
